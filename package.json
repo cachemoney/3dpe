@@ -14,6 +14,9 @@
     "three": "^0.160.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.5.2",
     "typescript": "3.3.3"
   },
   "scripts": {
@@ -27,5 +30,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!(three|@react-three)/)"
+    ]
+  }
 }
