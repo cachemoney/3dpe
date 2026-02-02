@@ -30,8 +30,9 @@ function SparkLine({ curve, width, color, speed }) {
 
 export function Sparks({ count, colors, radius = 10 }) {
   const lines = useMemo(
-    () =>
-      new Array(count).fill().map((_, index) => {
+    () => {
+      Random.setSeed(count + radius);
+      return new Array(count).fill().map((_, index) => {
         const pos = new THREE.Vector3(
           Math.sin(0) * radius * radiusVariance(),
           Math.cos(0) * radius * radiusVariance(),
@@ -52,12 +53,13 @@ export function Sparks({ count, colors, radius = 10 }) {
         });
         const curve = new THREE.CatmullRomCurve3(points).getPoints(1000);
         return {
-          color: colors[parseInt(colors.length * Math.random(), 10)],
+          color: colors[parseInt(colors.length * Random.value(), 10)],
           width: Math.max(0.1, (0.2 * index) / 10),
-          speed: Math.max(0.001, 0.004 * Math.random()),
+          speed: Math.max(0.001, 0.004 * Random.value()),
           curve,
         };
-      }),
+      });
+    },
     [count, colors, radius],
   );
 
