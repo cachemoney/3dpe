@@ -1,8 +1,8 @@
 {
   "id": "649ca2b8-0276-4987-970d-ad83f8156f42",
-  "status": "running",
+  "status": "completed",
   "startedAt": "2026-02-02T00:20:56.156Z",
-  "updatedAt": "2026-02-02T01:08:57.216Z",
+  "updatedAt": "2026-02-02T01:12:44.086Z",
   "agentPlugin": "claude",
   "trackerPlugin": "beads-bv",
   "epicId": "3dpe-ak9",
@@ -10,5 +10,6 @@
   "maxIterations": 10,
   "totalTasks": 0,
   "tasksCompleted": 9,
-  "cwd": "/home/mezmo/Work/projects/3dpe"
+  "cwd": "/home/mezmo/Work/projects/3dpe",
+  "endedAt": "2026-02-02T01:12:44.086Z"
 }
