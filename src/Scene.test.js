@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Canvas } from '@react-three/fiber';
-import { Scene, Controls } from './Scene';
+import { Scene } from './Scene';
 
 describe('Scene Component', () => {
   const renderWithCanvas = (component) => {
