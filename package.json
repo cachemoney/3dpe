@@ -6,12 +6,12 @@
   "main": "src/index.js",
   "dependencies": {
     "@amcdnl/threejs-meshline": "^1.0.0",
-    "@react-three/fiber": "^7.0.24",
+    "@react-three/fiber": "^8.17.10",
     "canvas-sketch-util": "^1.10.0",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-scripts": "4.0.0",
-    "three": "^0.136.0"
+    "three": "^0.160.0"
   },
   "devDependencies": {
     "typescript": "3.3.3"
