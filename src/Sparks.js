@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import React, { useRef, useMemo } from 'react';
+import PropTypes from 'prop-types';
 import { useFrame } from '@react-three/fiber';
 import Random from 'canvas-sketch-util/random';
 
@@ -28,14 +29,22 @@ function SparkLine({ curve, width, color, speed }) {
   );
 }
 
+SparkLine.propTypes = {
+  curve: PropTypes.array.isRequired,
+  width: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
+  speed: PropTypes.number.isRequired,
+};
+
 export function Sparks({ count, colors, radius = 10 }) {
   const lines = useMemo(
-    () =>
-      new Array(count).fill().map((_, index) => {
+    () => {
+      Random.setSeed(count + radius);
+      return new Array(count).fill().map((_, index) => {
         const pos = new THREE.Vector3(
           Math.sin(0) * radius * radiusVariance(),
           Math.cos(0) * radius * radiusVariance(),
-          Math.sin(0) * Math.cos(0) * radius * radiusVariance()
+          Math.sin(0) * Math.cos(0) * radius * radiusVariance(),
         );
         const points = new Array(30).fill().map((_, index) => {
           const angle = (index / 20) * Math.PI * 2;
@@ -45,20 +54,21 @@ export function Sparks({ count, colors, radius = 10 }) {
               new THREE.Vector3(
                 Math.sin(angle) * radius * radiusVariance(),
                 Math.cos(angle) * radius * radiusVariance(),
-                Math.sin(angle) * Math.cos(angle) * radius * radiusVariance()
-              )
+                Math.sin(angle) * Math.cos(angle) * radius * radiusVariance(),
+              ),
             )
             .clone();
         });
         const curve = new THREE.CatmullRomCurve3(points).getPoints(1000);
         return {
-          color: colors[parseInt(colors.length * Math.random(), 10)],
+          color: colors[parseInt(colors.length * Random.value(), 10)],
           width: Math.max(0.1, (0.2 * index) / 10),
-          speed: Math.max(0.001, 0.004 * Math.random()),
+          speed: Math.max(0.001, 0.004 * Random.value()),
           curve,
         };
-      }),
-    [count, colors, radius]
+      });
+    },
+    [count, colors, radius],
   );
 
   return (
@@ -69,3 +79,9 @@ export function Sparks({ count, colors, radius = 10 }) {
     </group>
   );
 }
+
+Sparks.propTypes = {
+  count: PropTypes.number.isRequired,
+  colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+  radius: PropTypes.number,
+};

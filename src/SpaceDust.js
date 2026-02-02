@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import React, { useRef, useMemo } from 'react';
+import PropTypes from 'prop-types';
 import { useFrame } from '@react-three/fiber';
 import Random from 'canvas-sketch-util/random';
 
@@ -38,7 +39,7 @@ export function SpaceDust({ count }) {
       dummy.position.set(
         x + Math.cos((t / 10) * factor) + (Math.sin(t * 1) * factor) / 10,
         y + Math.sin((t / 10) * factor) + (Math.cos(t * 2) * factor) / 10,
-        z + Math.cos((t / 10) * factor) + (Math.sin(t * 3) * factor) / 10
+        z + Math.cos((t / 10) * factor) + (Math.sin(t * 3) * factor) / 10,
       );
 
       // Derive an oscillating value which will be used
@@ -64,3 +65,7 @@ export function SpaceDust({ count }) {
     </>
   );
 }
+
+SpaceDust.propTypes = {
+  count: PropTypes.number.isRequired,
+};
