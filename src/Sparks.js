@@ -35,7 +35,7 @@ export function Sparks({ count, colors, radius = 10 }) {
         const pos = new THREE.Vector3(
           Math.sin(0) * radius * radiusVariance(),
           Math.cos(0) * radius * radiusVariance(),
-          Math.sin(0) * Math.cos(0) * radius * radiusVariance()
+          Math.sin(0) * Math.cos(0) * radius * radiusVariance(),
         );
         const points = new Array(30).fill().map((_, index) => {
           const angle = (index / 20) * Math.PI * 2;
@@ -45,8 +45,8 @@ export function Sparks({ count, colors, radius = 10 }) {
               new THREE.Vector3(
                 Math.sin(angle) * radius * radiusVariance(),
                 Math.cos(angle) * radius * radiusVariance(),
-                Math.sin(angle) * Math.cos(angle) * radius * radiusVariance()
-              )
+                Math.sin(angle) * Math.cos(angle) * radius * radiusVariance(),
+              ),
             )
             .clone();
         });
@@ -58,7 +58,7 @@ export function Sparks({ count, colors, radius = 10 }) {
           curve,
         };
       }),
-    [count, colors, radius]
+    [count, colors, radius],
   );
 
   return (

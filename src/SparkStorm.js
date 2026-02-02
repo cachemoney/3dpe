@@ -24,6 +24,7 @@ const simulation = () =>
 
 function StormLine({ radius, simulation, width, color }) {
   const line = useRef();
+  const [positions, currentPosition] = useMemo(() => createAttractor(5), []);
 
   useFrame(() => {
     if (line.current) {
@@ -31,14 +32,12 @@ function StormLine({ radius, simulation, width, color }) {
         currentPosition,
         radius,
         simulation,
-        0.005
+        0.005,
       );
 
       line.current.advance(nextPosition);
     }
   });
-
-  const [positions, currentPosition] = useMemo(() => createAttractor(5), []);
 
   return (
     <mesh>
@@ -60,7 +59,7 @@ export function SparkStorm({ count, colors, radius = 10 }) {
           radius: Random.range(2, 2.25) * radius,
         };
       }),
-    [count, colors, radius]
+    [count, colors, radius],
   );
 
   return (

@@ -50,7 +50,6 @@ export function aizawaAttractor([x, y, z], timestep) {
   const b = 0.7;
   const c = 0.6;
   const d = 3.5;
-  const e = 0.25;
   const f = 0.1;
 
   const dx = ((z - b) * x - d * y) * timestep;
