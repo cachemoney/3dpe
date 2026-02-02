@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "sessionId": "649ca2b8-0276-4987-970d-ad83f8156f42",
+  "status": "running",
+  "startedAt": "2026-02-02T00:21:12.358Z",
+  "updatedAt": "2026-02-02T00:23:14.620Z",
+  "currentIteration": 0,
+  "maxIterations": 10,
+  "tasksCompleted": 0,
+  "isPaused": false,
+  "agentPlugin": "claude",
+  "trackerState": {
+    "plugin": "beads-bv",
+    "epicId": "3dpe-ak9",
+    "totalTasks": 9,
+    "tasks": [
+      {
+        "id": "3dpe-ak9.2",
+        "title": "US-002: Create safety branch and backup mechanism",
+        "status": "open",
+        "completedInSession": false
+      },
+      {
+        "id": "3dpe-ak9.1",
+        "title": "US-001: Analyze current dependencies and plan upgrade batches",
+        "status": "open",
+        "completedInSession": false
+      },
+      {
+        "id": "3dpe-ak9.8",
+        "title": "US-008: Upgrade utility and remaining dependencies",
+        "status": "open",
+        "completedInSession": false
+      },
+      {
+        "id": "3dpe-ak9.7",
+        "title": "US-007: Upgrade type definition dependencies",
+        "status": "open",
+        "completedInSession": false
+      },
+      {
+        "id": "3dpe-ak9.6",
+        "title": "US-006: Upgrade linting and formatting dependencies",
+        "status": "open",
+        "completedInSession": false
+      },
+      {
+        "id": "3dpe-ak9.5",
+        "title": "US-005: Upgrade testing dependencies",
+        "status": "open",
+        "completedInSession": false
+      },
+      {
+        "id": "3dpe-ak9.4",
+        "title": "US-004: Upgrade build tool dependencies",
+        "status": "open",
+        "completedInSession": false
+      },
+      {
+        "id": "3dpe-ak9.3",
+        "title": "US-003: Upgrade framework dependencies",
+        "status": "open",
+        "completedInSession": false
+      },
+      {
+        "id": "3dpe-ak9.9",
+        "title": "US-009: Document upgrade results and create follow-up issues",
+        "status": "open",
+        "completedInSession": false
+      }
+    ]
+  },
+  "iterations": [],
+  "skippedTaskIds": [],
+  "cwd": "/home/mezmo/Work/projects/3dpe",
+  "activeTaskIds": [],
+  "subagentPanelVisible": false
+}
