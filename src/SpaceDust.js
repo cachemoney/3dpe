@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import React, { useRef, useMemo } from 'react';
+import PropTypes from 'prop-types';
 import { useFrame } from '@react-three/fiber';
 import Random from 'canvas-sketch-util/random';
 
@@ -64,3 +65,7 @@ export function SpaceDust({ count }) {
     </>
   );
 }
+
+SpaceDust.propTypes = {
+  count: PropTypes.number.isRequired,
+};

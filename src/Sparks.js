@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import React, { useRef, useMemo } from 'react';
+import PropTypes from 'prop-types';
 import { useFrame } from '@react-three/fiber';
 import Random from 'canvas-sketch-util/random';
 
@@ -27,6 +28,13 @@ function SparkLine({ curve, width, color, speed }) {
     </mesh>
   );
 }
+
+SparkLine.propTypes = {
+  curve: PropTypes.array.isRequired,
+  width: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
+  speed: PropTypes.number.isRequired,
+};
 
 export function Sparks({ count, colors, radius = 10 }) {
   const lines = useMemo(
@@ -71,3 +79,9 @@ export function Sparks({ count, colors, radius = 10 }) {
     </group>
   );
 }
+
+Sparks.propTypes = {
+  count: PropTypes.number.isRequired,
+  colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+  radius: PropTypes.number,
+};

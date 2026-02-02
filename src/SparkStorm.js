@@ -1,4 +1,5 @@
 import React, { useRef, useMemo } from 'react';
+import PropTypes from 'prop-types';
 import { useFrame } from '@react-three/fiber';
 import Random from 'canvas-sketch-util/random';
 import {
@@ -47,6 +48,13 @@ function StormLine({ radius, simulation, width, color }) {
   );
 }
 
+StormLine.propTypes = {
+  radius: PropTypes.number.isRequired,
+  simulation: PropTypes.func.isRequired,
+  width: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
+};
+
 export function SparkStorm({ count, colors, radius = 10 }) {
   const lines = useMemo(
     () =>
@@ -72,3 +80,9 @@ export function SparkStorm({ count, colors, radius = 10 }) {
     </group>
   );
 }
+
+SparkStorm.propTypes = {
+  count: PropTypes.number.isRequired,
+  colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+  radius: PropTypes.number,
+};
